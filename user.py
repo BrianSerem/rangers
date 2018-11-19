@@ -36,16 +36,7 @@ class Moderator(User):
 
 	def can_edit_own(self):
 		return True
-
-    
-    
-        
-
-    
-
-
-
-    
+   
 class Admin(Moderator):
     """Admin class"""
     def __init__(self):
