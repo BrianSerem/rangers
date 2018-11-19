@@ -8,8 +8,8 @@ class User:
     
     def create_user(self,user_id,status="logged out",login_time,logout_time):
         payload = {
-            "user_id": len(self.db)+1
-            "statue=s":status,
+            "user_id": len(self.db)+1,
+            "status":status,
             "login_time":login_time,
             "last_logout":logout_time
         }
@@ -34,5 +34,17 @@ class User:
 
 
     
+class Admin(Moderator):
+    """Admin class"""
+    def __init__(self):
+        super()
+
+    def can_edit_all(self):
+        """Admin can edit all comments"""
+        return True
+
+    def can_delete_all(self):
+        """Admin can delete all comments"""
+        return True
 
 
