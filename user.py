@@ -23,7 +23,19 @@ class User:
                 return "you are now logged out"
             return "please you are not logged in"
         return "user does not exist"
-    
+ 
+
+class Moderator(User):
+	
+	def __init__(self):
+		pass
+
+	def can_delete(self):
+		return True
+
+
+	def can_edit_own(self):
+		return True
 
     
     
