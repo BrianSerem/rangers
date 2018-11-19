@@ -14,6 +14,19 @@ class User:
             "last_logout":logout_time
         }
         self.db.append(payload)
+    
+    def logout(self,user_id):
+        user = self.get_user_by_id(user_id)
+        if user:
+            if user['status']=="logged_in":
+                user['logout_time'] = datetime.utcnow()
+                return "you are now logged out"
+            return "please you are not logged in"
+        return "user does not exist"
+    
+
+    
+    
         
 
     
